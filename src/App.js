@@ -1,6 +1,4 @@
 import UserCard from "./components/Card";
-import Demo from "./components/Demo";
-import MediaCard from './components/MaterialCard';
 
 function App() {
   return (

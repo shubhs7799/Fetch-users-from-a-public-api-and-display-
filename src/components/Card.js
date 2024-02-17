@@ -4,9 +4,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Button, CardActionArea} from "@mui/material";
 import { colorNameToCode } from "color-name-to-code";
-
+import ShimmerUI from "./ShimmerUI";
 import "../css/card.css";
 
 const UserCard = () => {
@@ -18,6 +18,7 @@ const UserCard = () => {
   const [prevPageUrl, setprevPageUrl] = useState("");
   const [nextPageUrl, setnextPageUrl] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -36,6 +37,7 @@ const UserCard = () => {
         console.log(json.results);
       } catch (error) {
         console.log("Error fetching data", error);
+        setError(error.message);
         setLoading(false);
       }
     };
@@ -73,8 +75,9 @@ const UserCard = () => {
           style={{ width: "300px", height: "40px", borderRadius: "10px" }}
         />
       </div>
+      {error && <p>{error}</p>}
       {loading ? (
-        <p>Loading...</p>
+        <ShimmerUI/>
       ) : (
         <div className="user-card-container">
           {userData.map((user, index) => (
