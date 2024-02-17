@@ -1,0 +1,55 @@
+/* .user-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.user-card {
+  flex-grow: 1; 
+  max-width: calc(50% - 20px); 
+}
+
+.user-card:nth-child(-n+2) {
+  flex-grow: 0;
+}
+*/
+
+
+ .search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input{
+  background-color: rgb(210, 219, 225);
+
+}
+
+.user-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.user-card {
+  width: 300px;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 10px;
+}
+
